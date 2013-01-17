@@ -1,0 +1,34 @@
+- user: email, password, role, name, loginviafacebookflag, gravatar
+- teilnehmerliste
+- anmeldung
+- korrekturen
+- sponsorenliste
+- ergebnisliste
+- urkundendruck
+- fotos und videos/links: Speicherplatz für eigene Bilder
+- facebook connection
+- languages: nl, de, en
+- news:
+- todo_templates:
+- qr codes für ergebnislisten und urkunden
+- counter
+- anzahl meldungen
+- Interface zu raceresult
+- email-interface?
+- anmeldung zum newsletter (infos anmeldestart, kurz vor anmeldeende)
+
+
+
+
+====================================================================================
+Gründe für neue HP:
+- Sicherheit
+  - Mit PHP ohne genaues Wissen wann welche Module installiert werden schwer möglich
+-Wartbarkeit
+  - Trennung von Layout, Content, Daten usw.
+  - Automatisiert getestet, automatisuert deployt
+  - Quellcode documentation
+- Adaptives Layout
+  - Für Handy, Tablet und PC-Webseite
+  - DE, EN, NL
+
