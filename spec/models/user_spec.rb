@@ -2,9 +2,9 @@ require 'spec_helper'
 
 describe User do
 
-  before { @user = User.new(name: "Example User", email: "user@example.com", password: "foobar", password_confirmation: "foobar") }
+  let(:user) { FactoryGirl.create(:user) }
 
-  subject { @user }
+  subject { user }
   
   it { should be_valid }
 
@@ -21,21 +21,21 @@ describe User do
   it { should ensure_length_of(:email).is_at_most(100)}
   
   describe "when password is not present" do
-    before { @user.password = @user.password_confirmation = " " }
+    subject { FactoryGirl.build(:user, password: " ", password_confirmation: " ")}
     it { should_not be_valid }
   end
   describe "when password doesn't match confirmation" do
-    before { @user.password_confirmation = "mismatch" }
+    subject { FactoryGirl.build(:user, password: "foobar", password_confirmation: "mismatch")}
     it { should_not be_valid }
   end
 
   it { should respond_to(:authenticate) }
   describe "return value of authenticate method" do
-    before { @user.save }
-    let(:found_user) { User.find_by_email(@user.email) }
+    before { user.save }
+    let(:found_user) { User.find_by_email(user.email) }
 
     describe "with valid password" do
-      it { should == found_user.authenticate(@user.password) }
+      it { should == found_user.authenticate(user.password) }
     end
 
     describe "with invalid password" do

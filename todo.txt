@@ -1,8 +1,9 @@
-- user: email, password, role, name, loginviafacebookflag, gravatar
+- user: email, password, role, name, login_via_facebook_flag, add gravatar image
+- startseite
 - teilnehmerliste
 - anmeldung
 - korrekturen
-- sponsorenliste
+- sponsorenliste (tabelle mit name, images)
 - ergebnisliste
 - urkundendruck
 - fotos und videos/links: Speicherplatz für eigene Bilder

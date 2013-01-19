@@ -1,9 +1,25 @@
 !!!
 %html
   %head
-    %title SylvesterlaufRails
+    %title Sylvesterlauf Pfalzdorf
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
-    = yield
+    - if current_user
+      .navbar
+        .navbar-inner
+          .container
+            = link_to 'Sylvesterlauf.de', root_path, :class => "brand"
+            .pull-right
+              = link_to ' ' + current_user.name,user_path(current_user), class: 'icon-user'
+              = link_to " Abmelden" , session_path, :method => :delete, :class => "btn icon-eject"
+    .row
+      - flash.each do |key, value|
+        %div{class:"alert alert#{key}"}
+          = value
+      .span10.offset1
+        = yield
+    %hr
+    = debug(params) if Rails.env.development?
+    

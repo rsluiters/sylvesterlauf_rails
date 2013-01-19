@@ -1,6 +1,7 @@
 SylvesterlaufRails::Application.routes.draw do
-  get "users/new"
-
+  resources :users
+  match '/signup',  to: 'users#new'
+  
   resources :events
 
   root :to => 'homepage#index'
