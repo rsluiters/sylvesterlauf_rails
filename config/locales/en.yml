@@ -13,3 +13,4 @@ en:
     after_run:
       after_run: "After Run"
       results: "Results"
+      print_certificate: "Print Certificate"

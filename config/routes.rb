@@ -10,4 +10,6 @@ SylvesterlaufRails::Application.routes.draw do
   match '/homepage/strecke',  to: 'homepage#strecke'
   match '/homepage/googlemaps',  to: 'homepage#googlemaps'
 
+  match '/set_language/:locale',  to: 'application#set_language'
+
 end

@@ -18,11 +18,14 @@
         = yield
     %hr
     .pull-right
-      %img{src: "assets/flags/de.png"}
-      DE
-      %img{src: "assets/flags/nl.png"}
-      NL
-      %img{src: "assets/flags/gb.png"}
-      EN
+      %a{href: "/set_language/de"}
+        %img{src: "/assets/flags/de.png"}
+        DE
+      %a{href: "/set_language/nl"}
+        %img{src: "/assets/flags/nl.png"}
+        NL
+      %a{href: "/set_language/en"}
+        %img{src: "/assets/flags/gb.png"}
+        EN
     = debug(params) if Rails.env.development?
     

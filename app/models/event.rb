@@ -6,7 +6,7 @@ class Event < ActiveRecord::Base
   end
   
   def participants_list_url
-    "http://my3.raceresult.com/details/index.php?page=3&eventid=#{raceresults_id}"
+    "http://my3.raceresult.com/details/index.php?page=3&eventid=#{raceresults_id}&lang=#{I18n.locale}"
   end
   
 end
