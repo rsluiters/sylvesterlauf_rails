@@ -17,6 +17,8 @@
 - Interface zu raceresult
 - email-interface?
 - anmeldung zum newsletter (infos anmeldestart, kurz vor anmeldeende)
+- Use google analytics on every page
+
 
 
 

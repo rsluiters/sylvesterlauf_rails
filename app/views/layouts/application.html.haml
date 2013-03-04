@@ -3,23 +3,26 @@
   %head
     %title Sylvesterlauf Pfalzdorf
     = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag "http://maps.googleapis.com/maps/api/js?sensor=false"
     = javascript_include_tag "application"
+    
+    %meta{name:"viewport",content:"initial-scale=1.0, user-scalable=no"}/
     = csrf_meta_tags
   %body
-    - if current_user
-      .navbar
-        .navbar-inner
-          .container
-            = link_to 'Sylvesterlauf.de', root_path, :class => "brand"
-            .pull-right
-              = link_to ' ' + current_user.name,user_path(current_user), class: 'icon-user'
-              = link_to " Abmelden" , session_path, :method => :delete, :class => "btn icon-eject"
-    .row
-      - flash.each do |key, value|
-        %div{class:"alert alert#{key}"}
-          = value
+    = render 'layouts/header'
+    - flash.each do |key, value|
+      %div{class:"alert alert#{key}"}
+        = value
+    .row-fluid
       .span10.offset1
         = yield
     %hr
+    .pull-right
+      %img{src: "assets/flags/de.png"}
+      DE
+      %img{src: "assets/flags/nl.png"}
+      NL
+      %img{src: "assets/flags/gb.png"}
+      EN
     = debug(params) if Rails.env.development?
     

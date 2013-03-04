@@ -1,0 +1,53 @@
+%header.navbar.navbar-inverse
+  .navbar-inner
+    .container
+      %a.btn.btn-navbar{"data-toggle" => "collapse","data-target" =>".nav-collapse"}
+        %span.icon-bar=""
+        %span.icon-bar=""
+        %span.icon-bar=""
+      = link_to "Sylvesterlauf", root_path, id: "logo", class: "brand"
+      .nav-collapse.collapse
+        %nav
+          %ul.nav
+            %li.dropdown
+              %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                = I18n.t("nav.before_run.before_run")
+                %b.caret
+              %ul.dropdown-menu
+                %li= link_to I18n.t("nav.before_run.announcement"), "#"
+                %li= link_to I18n.t("nav.before_run.corrections"), "#"
+                %li= link_to I18n.t("nav.before_run.participants_list"), Event.next_event.participants_list_url
+                %li= link_to I18n.t("nav.before_run.course_info"), "/homepage/strecke"
+                %li= link_to I18n.t("nav.before_run.route_and_parking"), "#"
+            %li.dropdown
+              %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                = I18n.t("nav.after_run.after_run")
+                %b.caret
+              %ul.dropdown-menu
+                %li= link_to I18n.t("nav.after_run.results"), "#"
+                %li= link_to "Urkundendruck", "#"
+                %li= link_to "Pressespiegel", "#"
+            %li= link_to "Fotos", "#"
+            %li.dropdown
+              %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                Kontakt
+                %b.caret
+              %ul.dropdown-menu
+                %li= link_to "Gästebuch", "#"
+                %li= link_to "Kontakt und Impressum", "#"
+          %ul.nav.pull-right
+            - if signed_in?
+              -#%li= link_to "Users", '#'
+              %li.dropdown
+                %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                  %span.icon-user
+                  = " " + current_user.name
+                  %b.caret
+                %ul.dropdown-menu
+                  %li= link_to "Profil", current_user
+                  -#%li= link_to "Settings", '#'
+                  %li.divider
+                  %li= link_to "Ausloggen", signout_path, method: "delete"
+            - else
+              %li= link_to "Interner Bereich", signin_path
+

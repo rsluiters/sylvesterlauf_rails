@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+  </head>
+  <body onload="initialize();animateCircle();">
+    <style type="text/css">
+        html { height: 100% }
+        body { height: 100%; margin: 0; padding: 0 }
+        #map_canvas { height: 100% }
+      </style>
+      <script type="text/javascript"
+        src="http://maps.googleapis.com/maps/api/js?sensor=false">
+      </script>
+      <script type="text/javascript">
+        var flightPath;
+    
+        function initialize() {
+          var lineSymbol = {
+            path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
+            scale: 4
+          };
+        
+          var mapOptions = {
+            center: new google.maps.LatLng(51.706741,6.162729),
+            zoom: 16,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+          };
+          var map = new google.maps.Map(document.getElementById("map_canvas"),
+              mapOptions);
+
+          var course500mCoordinates = [
+            new google.maps.LatLng(51.707044,6.163867),
+            new google.maps.LatLng(51.705226,6.162429),
+
+            new google.maps.LatLng(51.705226,6.162445),
+            new google.maps.LatLng(51.705408,6.161914),
+            new google.maps.LatLng(51.705226,6.162445),
+
+            new google.maps.LatLng(51.706901,6.163716),
+            new google.maps.LatLng(51.706941,6.163287),
+            new google.maps.LatLng(51.706688,6.163008)];
+      
+
+          
+          flightPath = new google.maps.Polyline({
+            path: course500mCoordinates,
+            strokeColor: "#FF0000",
+            strokeOpacity: 1.0,
+            strokeWeight: 2,
+            icons: [{
+                  icon: lineSymbol,
+                  offset: '0%'
+                }]
+          });
+
+
+
+          flightPath.setMap(map);
+        }
+      
+        function animateCircle() {
+            var count = 0;
+            offsetId = window.setInterval(function() {
+              if (count<999) {count = count + 1;}
+              var icons = flightPath.get('icons');
+              icons[0].offset = (count/10) + '%';
+              flightPath.set('icons', icons);
+          }, 20);
+        }
+      
+      
+      </script>
+
+    <div id="map_canvas" style="width:100%; height:100%"></div>
+  </body>
+</html>

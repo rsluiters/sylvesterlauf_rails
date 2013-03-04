@@ -1,4 +1,9 @@
 
+html { height: 100% }
+body { height: 100%; margin: 0; padding: 0 }
+
+
+
 /* mixins, variables, etc. */
 
 $grayMediumLight: #eaeaea;
@@ -10,8 +15,13 @@ $grayLighter: #efefef;
   box-sizing: border-box;
 }
 
-
-
+body {
+  background-image:url('logo_background.jpg');
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+  background-position: center center;
+  
+}
 
 /* miscellaneous */
 

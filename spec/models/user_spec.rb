@@ -13,6 +13,8 @@ describe User do
   it { should respond_to(:password_digest) }
   it { should respond_to(:password) }
   it { should respond_to(:password_confirmation) }
+  it { should respond_to(:remember_token) }
+  it { should respond_to(:authenticate) }  
      
   it { should validate_uniqueness_of(:email) }
   it { should ensure_length_of(:name).is_at_least(1)} 
@@ -44,6 +46,10 @@ describe User do
       it { should_not == user_for_invalid_password }
       specify { user_for_invalid_password.should be_false }
     end
+  end
+  
+  describe "remember token" do
+    its(:remember_token) { should_not be_blank }
   end
   
 end

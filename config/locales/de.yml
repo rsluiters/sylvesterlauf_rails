@@ -1,0 +1,15 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  nav:
+    before_run:
+      before_run: "Vor dem Lauf"
+      announcement: "Ausschreibung"
+      corrections: "Korrekturen"
+      participants_list: "Teilnehmerliste"
+      course_info: "Streckeninformationen"
+      route_and_parking: "Anfahrt und Parken"
+    after_run:
+      after_run: "Nach dem Lauf"
+        results: "Ergebnislisten"

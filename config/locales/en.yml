@@ -2,4 +2,14 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  nav:
+    before_run:
+      before_run: "Before Run"
+      announcement: "Announcement"
+      corrections: "Corrections"
+      participants_list: "Participants List"
+      course_info: "Course Info"
+      route_and_parking: "Route And Parking"
+    after_run:
+      after_run: "After Run"
+      results: "Results"

@@ -1,0 +1,30 @@
+%h2 Strecke
+%a{href: "/homepage/strecke?course=5km"}
+  5000m
+%a{href: "/homepage/strecke?course=10km"}
+  10000m
+%a{href: "/homepage/strecke?course=3km"}
+  3000m
+%a{href: "/homepage/strecke?course=500m"}
+  500m
+
+%br/
+
+- streets, rounds = course_description(@course)
+.row
+  .span3
+    %h3
+      = @course
+    %p
+      %b
+        Streckenführung:
+      %br/
+      = streets
+    %br/
+    %br/
+    = rounds
+    %br/
+    %br/
+    Der Pfeil beschreibt die Laufrichtung, die schwarzen Punkte sind jeweils die Kilometer.
+  .span9
+    %iframe{src: "/homepage/googlemaps?course=#{@course}", height:"80%", width:"100%", frameborder:"0", scrolling:"no"}

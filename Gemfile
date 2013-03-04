@@ -20,6 +20,15 @@ end
 
 gem 'jquery-rails'
 
+group :development do
+  gem 'bullet'
+  gem 'better_errors'
+  gem 'binding_of_caller'#For bettererrors
+  gem 'meta_request' #For RailsPanel in Chrome
+end  
+
+
+
 group :development, :test do
   gem 'sqlite3'
 

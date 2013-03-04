@@ -3,10 +3,36 @@
 .row
   %aside.span4
     %section
-      %h1
-        = gravatar_for @user
-        = @user.name
-      = @user.email
+      = gravatar_for @user
       %small
         %a{href:"http://de.gravatar.com/"} Bild ändern
-        
+      %h1
+        = @user.name
+      %ul
+        %li
+          Email:
+          = @user.email
+        %li
+          Adresse (privat):
+          = @user.address_home
+        %li
+          Adresse (Arbeit):
+          = @user.address_work
+        %li
+          Telefonnummern (privat):
+          = @user.phone_home 
+        %li
+          Telefonnummern (mobil):
+          = @user.phone_mobile
+        %li
+          Telefonnummern (Arbeit):
+          = @user.phone_work
+        %li
+          Geburtsdatum: 
+          = @user.birthdate
+      %small
+        (Erstellt:
+        = @user.created_at.localtime
+        Letzte Änderung:
+        = @user.updated_at.localtime
+        )
