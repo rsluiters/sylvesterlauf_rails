@@ -1,6 +1,6 @@
 - user: email, password, role, name, login_via_facebook_flag, add gravatar image
+- veranstaltungen CRUD Menu
 - startseite
-- teilnehmerliste
 - anmeldung
 - korrekturen
 - sponsorenliste (tabelle mit name, images)
@@ -8,7 +8,6 @@
 - urkundendruck
 - fotos und videos/links: Speicherplatz für eigene Bilder
 - facebook connection
-- languages: nl, de, en
 - news:
 - todo_templates:
 - qr codes für ergebnislisten und urkunden
@@ -19,6 +18,7 @@
 - anmeldung zum newsletter (infos anmeldestart, kurz vor anmeldeende)
 - Use google analytics on every page
 
+- Use GitHub for Issues (abobe) and Wiki(below)
 
 
 
