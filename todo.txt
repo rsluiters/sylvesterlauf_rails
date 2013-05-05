@@ -16,22 +16,15 @@
 - Interface zu raceresult
 - email-interface?
 - anmeldung zum newsletter (infos anmeldestart, kurz vor anmeldeende)
+- contact
 - Use google analytics on every page
 
-- Use GitHub for Issues (abobe) and Wiki(below)
+- Counter for next event: http://my3.raceresult.com/details/counter.php?eventid=12937
+
+- Report Error: https://github.com/rsluiters/sylvesterlauf_rails/issues/new
 
 
 
 
 ====================================================================================
-Gründe für neue HP:
-- Sicherheit
-  - Mit PHP ohne genaues Wissen wann welche Module installiert werden schwer möglich
--Wartbarkeit
-  - Trennung von Layout, Content, Daten usw.
-  - Automatisiert getestet, automatisuert deployt
-  - Quellcode documentation
-- Adaptives Layout
-  - Für Handy, Tablet und PC-Webseite
-  - DE, EN, NL
 
