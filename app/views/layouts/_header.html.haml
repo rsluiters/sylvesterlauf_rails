@@ -24,7 +24,7 @@
                 = I18n.t("nav.after_run.after_run")
                 %b.caret
               %ul.dropdown-menu
-                %li= link_to I18n.t("nav.after_run.results"), "#"
+                %li= link_to I18n.t("nav.after_run.results"), Event.next_event.result_url
                 %li= link_to I18n.t("nav.after_run.print_certificate"), "#"
                 %li= link_to "Pressespiegel", "#"
             %li= link_to "Fotos", "#"
@@ -45,6 +45,7 @@
                   %b.caret
                 %ul.dropdown-menu
                   %li= link_to "Profil", current_user
+                  %li= link_to "Fehler auf Seite melden", "https://github.com/rsluiters/sylvesterlauf_rails/issues/new"
                   -#%li= link_to "Settings", '#'
                   %li.divider
                   %li= link_to "Ausloggen", signout_path, method: "delete"

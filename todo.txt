@@ -1,30 +1,27 @@
 - user: email, password, role, name, login_via_facebook_flag, add gravatar image
+- news.new/edit/delete => authenticate before filter
 - veranstaltungen CRUD Menu
 - startseite
 - anmeldung
 - korrekturen
 - sponsorenliste (tabelle mit name, images)
-- ergebnisliste
-- urkundendruck
-- fotos und videos/links: Speicherplatz für eigene Bilder
+- raceresult stuff in iframe
+- urkundendruck (Namen / Startnummer eingeben und dann Anzeige der Urkunde)
+
+- News: carrierwave upload to sftp folder
+- fotos und videos/links: Speicherplatz für eigene Bilder 
+
 - facebook connection
-- news:
 - todo_templates:
-- qr codes für ergebnislisten und urkunden
 - counter
-- anzahl meldungen
-- Interface zu raceresult
+
 - email-interface?
 - anmeldung zum newsletter (infos anmeldestart, kurz vor anmeldeende)
-- contact
+
 - Use google analytics on every page
 
-- Counter for next event: http://my3.raceresult.com/details/counter.php?eventid=12937
 
-- Report Error: https://github.com/rsluiters/sylvesterlauf_rails/issues/new
-
+- For logged in users: Internal area: Report Error: https://github.com/rsluiters/sylvesterlauf_rails/issues/new
 
 
-
-====================================================================================
 

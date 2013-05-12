@@ -1,13 +1,12 @@
 %H1 STARTPAGE
 %br
+=render :template => 'news/index'
 %br
 %br
 %br
 %br
-%br
-%br
-%br
-%br
+Anzahl Meldungen: 
+= Event.next_event.runner_counter
 %br
 %br
 %br

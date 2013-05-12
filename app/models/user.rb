@@ -13,6 +13,11 @@ class User < ActiveRecord::Base
   validates_confirmation_of :password
   validates :password_confirmation, presence: true
   
+  
+  def admin?
+    self.email=="ralph@sluiters.de"
+  end
+  
 private
 
   def create_remember_token

@@ -1,5 +1,6 @@
 class HomepageController < ApplicationController
   def index
+    @news=News.newest
   end
 
   def strecke
