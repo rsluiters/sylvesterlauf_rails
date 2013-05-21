@@ -1,4 +1,10 @@
 SylvesterlaufRails::Application.routes.draw do
+  resources :applications_applications
+
+
+  resources :applications_events
+
+
   resources :news
 
 

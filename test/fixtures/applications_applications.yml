@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  applications_event_id: 1
+  name: MyString
+  birth_year: 1
+  course: MyString
+  comment: MyText
+
+two:
+  applications_event_id: 1
+  name: MyString
+  birth_year: 1
+  course: MyString
+  comment: MyText

@@ -11,7 +11,27 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130505190553) do
+ActiveRecord::Schema.define(:version => 20130520190345) do
+
+  create_table "applications_applications", :force => true do |t|
+    t.integer  "applications_event_id"
+    t.string   "name"
+    t.integer  "birth_year"
+    t.string   "course"
+    t.text     "comment"
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
+  end
+
+  create_table "applications_events", :force => true do |t|
+    t.string   "name"
+    t.date     "deadline_internal"
+    t.string   "url"
+    t.string   "announcement_url"
+    t.text     "comment"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
 
   create_table "events", :force => true do |t|
     t.date     "date"

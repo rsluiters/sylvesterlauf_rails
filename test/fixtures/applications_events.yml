@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  deadline_internal: 2013-05-20
+  url: MyString
+  announcement_url: MyString
+  comment: MyText
+
+two:
+  name: MyString
+  deadline_internal: 2013-05-20
+  url: MyString
+  announcement_url: MyString
+  comment: MyText

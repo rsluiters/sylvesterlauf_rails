@@ -1,0 +1,31 @@
+<h1>Listing applications_events</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Deadline internal</th>
+    <th>Url</th>
+    <th>Announcement url</th>
+    <th>Comment</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @applications_events.each do |applications_event| %>
+  <tr>
+    <td><%= applications_event.name %></td>
+    <td><%= applications_event.deadline_internal %></td>
+    <td><%= applications_event.url %></td>
+    <td><%= applications_event.announcement_url %></td>
+    <td><%= applications_event.comment %></td>
+    <td><%= link_to 'Show', applications_event %></td>
+    <td><%= link_to 'Edit', edit_applications_event_path(applications_event) %></td>
+    <td><%= link_to 'Destroy', applications_event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Applications event', new_applications_event_path %>

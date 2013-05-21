@@ -1,0 +1,2 @@
+module ApplicationsApplicationsHelper
+end

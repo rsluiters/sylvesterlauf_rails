@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Applications event:</b>
+  <%= @applications_application.applications_event_id %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @applications_application.name %>
+</p>
+
+<p>
+  <b>Birth year:</b>
+  <%= @applications_application.birth_year %>
+</p>
+
+<p>
+  <b>Course:</b>
+  <%= @applications_application.course %>
+</p>
+
+<p>
+  <b>Comment:</b>
+  <%= @applications_application.comment %>
+</p>
+
+
+<%= link_to 'Edit', edit_applications_application_path(@applications_application) %> |
+<%= link_to 'Back', applications_applications_path %>
