@@ -1,0 +1,23 @@
+%h1 Listing applications_applications
+%table
+  %tr
+    %th Applications event
+    %th Name
+    %th Birth year
+    %th Course
+    %th Comment
+    %th
+    %th
+    %th
+  - @applications_applications.each do |applications_application|
+    %tr
+      %td= applications_application.applications_event_id
+      %td= applications_application.name
+      %td= applications_application.birth_year
+      %td= applications_application.course
+      %td= applications_application.comment
+      %td= link_to 'Show', applications_application
+      %td= link_to 'Edit', edit_applications_application_path(applications_application)
+      %td= link_to 'Destroy', applications_application, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Applications application', new_applications_application_path

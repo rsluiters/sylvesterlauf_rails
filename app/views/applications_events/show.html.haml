@@ -1,0 +1,19 @@
+%p#notice= notice
+%p
+  %b Name:
+  = @applications_event.name
+%p
+  %b Deadline internal:
+  = @applications_event.deadline_internal
+%p
+  %b Url:
+  = @applications_event.url
+%p
+  %b Announcement url:
+  = @applications_event.announcement_url
+%p
+  %b Comment:
+  = @applications_event.comment
+= link_to 'Edit', edit_applications_event_path(@applications_event)
+|
+\#{link_to 'Zurück', applications_events_path}

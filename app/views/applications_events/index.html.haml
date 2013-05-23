@@ -1,0 +1,36 @@
+%h1 Veranstaltungen
+%table.table.table-striped
+  %tr
+    %th Name der Veranstaltung
+    %th Meldeschluss
+    %th Homepage
+    %th Ausschreibung
+    %th Zusatzinfos
+    %th
+  - @applications_events.sort{|x,y| x.deadline_internal <=> y.deadline_internal}.each do |applications_event|
+    %tr
+      %td= applications_event.name
+      %td= applications_event.deadline_internal.strftime("%d.%m.%Y")
+      %td
+        - if applications_event.url.blank?
+          = "---"
+        - else  
+          %a{href: applications_event.url} 
+            Homepage
+      %td
+        - if applications_event.announcement_url.blank?
+          = "---"
+        - else
+          %a{href: applications_event.announcement_url}
+            Ausschreibung
+      %td= applications_event.comment
+      %td
+        - if applications_event.deadline_internal >= Date.today
+          =link_to "Anmelden", applications_event, class: "btn"
+        -else
+          %span.btn.disabled
+            Anmelden
+        = link_to 'Bearbeiten', edit_applications_event_path(applications_event), class: "btn"
+        = link_to 'Löschen', applications_event, method: :delete, data: { confirm: 'Bist du sicher?' }, class: "btn btn-danger"
+%br/
+= link_to 'Neue Veranstaltung', new_applications_event_path
