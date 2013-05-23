@@ -6,6 +6,7 @@
     %th Homepage
     %th Ausschreibung
     %th Zusatzinfos
+    %th Meldungen
     %th
   - @applications_events.sort{|x,y| x.deadline_internal <=> y.deadline_internal}.each do |applications_event|
     %tr
@@ -24,13 +25,21 @@
           %a{href: applications_event.announcement_url}
             Ausschreibung
       %td= applications_event.comment
+      %td= applications_event.applications.size
       %td
         - if applications_event.deadline_internal >= Date.today
           =link_to "Anmelden", applications_event, class: "btn"
         -else
           %span.btn.disabled
             Anmelden
-        = link_to 'Bearbeiten', edit_applications_event_path(applications_event), class: "btn"
-        = link_to 'Löschen', applications_event, method: :delete, data: { confirm: 'Bist du sicher?' }, class: "btn btn-danger"
+        - if current_user
+          = link_to edit_applications_event_path(applications_event), class: "btn" do
+            %i.icon-pencil
+          = link_to applications_event, method: :delete, data: { confirm: 'Bist du sicher?' }, class: "btn btn-danger" do
+            %i.icon-trash
+        
 %br/
-= link_to 'Neue Veranstaltung', new_applications_event_path
+- if current_user
+  = link_to new_applications_event_path,class: "btn" do
+    %i.icon-plus
+    Neue Veranstaltung

@@ -1,20 +1,21 @@
 %p#notice= notice
+%h1= @applications_event.name
+- if current_user
+  = link_to edit_applications_event_path(@applications_event),class: "btn pull-right" do
+    %i.icon-pencil
+    Lauf Bearbeiten
 %p
-  %b Name:
-  = @applications_event.name
+  %b Meldeschluss:
+  = @applications_event.deadline_internal.strftime("%d.%m.%Y")
 %p
-  %b Deadline internal:
-  = @applications_event.deadline_internal
-%p
-  %b Url:
+  %b Homepage:
   = @applications_event.url
 %p
-  %b Announcement url:
+  %b Ausschreibung:
   = @applications_event.announcement_url
 %p
-  %b Comment:
+  %b Kommentar:
   = @applications_event.comment
-= link_to 'Edit', edit_applications_event_path(@applications_event)
 
 %table.table.table-striped
   %tr
@@ -30,8 +31,13 @@
       %td= applications_application.course
       %td= applications_application.comment
       %td
-        = link_to 'Bearbeiten', edit_applications_event_applications_application_path(applications_application)
-        = link_to 'Löschen', [@applications_event,applications_application], method: :delete, data: { confirm: 'Bist du sicher?' }
+        - if current_user
+          = link_to edit_applications_event_applications_application_path(applications_application),class:"btn" do
+            %i.icon-pencil
+          = link_to [@applications_event,applications_application], method: :delete, data: { confirm: 'Bist du sicher?' },class:"btn" do
+            %i.icon-trash
+        - else
+          = "---"
 %br/
 = link_to 'Anmelden', new_applications_event_applications_application_path(@applications_event),class: "btn btn-primary btn-large"
 
