@@ -24,6 +24,7 @@ class ApplicationsApplicationsController < ApplicationController
   # GET /applications_applications/new
   # GET /applications_applications/new.json
   def new
+    @application_event=ApplicationsEvent.find(params[:applications_event_id])
     @applications_application = ApplicationsApplication.new
 
     respond_to do |format|
@@ -40,15 +41,15 @@ class ApplicationsApplicationsController < ApplicationController
   # POST /applications_applications
   # POST /applications_applications.json
   def create
+    @application_event=ApplicationsEvent.find(params[:applications_event_id])
     @applications_application = ApplicationsApplication.new(params[:applications_application])
-
+    @applications_application.applications_event_id=@application_event.id
+    
     respond_to do |format|
       if @applications_application.save
-        format.html { redirect_to @applications_application, notice: 'Applications application was successfully created.' }
-        format.json { render json: @applications_application, status: :created, location: @applications_application }
+        format.html { redirect_to @application_event, notice: 'Applications application was successfully created.' }
       else
         format.html { render action: "new" }
-        format.json { render json: @applications_application.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -72,11 +73,12 @@ class ApplicationsApplicationsController < ApplicationController
   # DELETE /applications_applications/1
   # DELETE /applications_applications/1.json
   def destroy
+    @application_event=ApplicationsEvent.find(params[:applications_event_id])
     @applications_application = ApplicationsApplication.find(params[:id])
     @applications_application.destroy
 
     respond_to do |format|
-      format.html { redirect_to applications_applications_url }
+      format.html { redirect_to @application_event }
       format.json { head :no_content }
     end
   end

@@ -15,5 +15,25 @@
   %b Comment:
   = @applications_event.comment
 = link_to 'Edit', edit_applications_event_path(@applications_event)
-|
-\#{link_to 'Zurück', applications_events_path}
+
+%table.table.table-striped
+  %tr
+    %th Name
+    %th Jahrgang
+    %th Strecke
+    %th Kommentar
+    %th
+  - @applications_event.applications.each do |applications_application|
+    %tr
+      %td= applications_application.name
+      %td= applications_application.birth_year
+      %td= applications_application.course
+      %td= applications_application.comment
+      %td
+        = link_to 'Bearbeiten', edit_applications_event_applications_application_path(applications_application)
+        = link_to 'Löschen', [@applications_event,applications_application], method: :delete, data: { confirm: 'Bist du sicher?' }
+%br/
+= link_to 'Anmelden', new_applications_event_applications_application_path(@applications_event),class: "btn btn-primary btn-large"
+
+
+=link_to 'Zurück', applications_events_path,class: "btn"
