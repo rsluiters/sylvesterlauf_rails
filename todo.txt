@@ -20,16 +20,13 @@
 
 
 - ApplicationsEvent:
-index for all, other only for logged in admins
-index add link to add application
-german
-bootstrap
+Complete german, bootstrap, check loged in users (and add also to models)
+allow "anmelden" only from day x
+nachmeldung mit flag
+gender
+internal comment
 
-- ApplicationsApplication:
-add application for all users
-index, delete, ... only for logged in admins
-german
-bootstrap
+
 
 
 - Report Error: Test if only works when logged in to github

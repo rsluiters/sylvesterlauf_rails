@@ -1,0 +1,19 @@
+%p#notice= notice
+%p
+  %b Applications event:
+  = @applications_application.applications_event_id
+%p
+  %b Name:
+  = @applications_application.name
+%p
+  %b Birth year:
+  = @applications_application.birth_year
+%p
+  %b Course:
+  = @applications_application.course
+%p
+  %b Comment:
+  = @applications_application.comment
+= link_to 'Bearbeiten', edit_applications_application_path(@applications_application), class:"btn"
+= " | "
+=link_to 'Zurück', applications_applications_path, class:"btn"
