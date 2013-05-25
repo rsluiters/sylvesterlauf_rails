@@ -1,27 +1,19 @@
-= form_for([@application_event,@applications_application]) do |f|
+= simple_form_for([@application_event,@applications_application], :html => {:class => 'form-horizontal' }) do |f|
   - if @applications_application.errors.any?
     #error_explanation
       %h2
-        = pluralize(@applications_application.errors.count, "error")
-        prohibited this applications_application from being saved:
+        = @applications_application.errors.count
+        Fehler verhinderten das Speichern der Anmeldung:
       %ul
         - @applications_application.errors.full_messages.each do |msg|
           %li= msg
-  .field
-    = f.label :name, "Name"
-    %br/
-    = f.text_field :name
-  .field
-    = f.label :birth_year, "Jahrgang"
-    %br/
-    = f.number_field :birth_year
-  .field
-    = f.label :course, "Strecke"
-    %br/
-    = f.text_field :course
-  .field
-    = f.label :comment, "Kommentar"
-    %br/
-    = f.text_area :comment
-  .actions
-    = f.submit
+  = f.input :name, label: "Name:",  input_html:{class: "input-xlarge"}
+  = f.input :birth_year,as: :integer, label: "Jahrgang:", input_html:{class: "input-small"}, hint: "Geburtsjahr JJJJ, z.B. 1999"
+  = f.input :course, label: "Strecke:",  input_html:{class: "input-medium"}
+  = f.input :comment, as: :text, label: "Kommentar:", input_html: {rows: 5,cols:20}
+  %strong
+    %b Achtung:
+    Es handelt sich hier nicht um eine direkte Anmeldung beim gewählten Lauf, sondern nur um eine interne Information für den Verein, welche Läufer gemeldet werden wollen.
+    Meldungen sind deshlab z.B. nicht direkt in der Teilnehmerliste des entsprechenden Laufs zu finden.
+  %br
+  = f.button :submit, "Anmelden", class: 'btn btn-primary btn-large'

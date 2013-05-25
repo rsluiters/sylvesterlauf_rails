@@ -19,6 +19,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'simple_form'
 
 group :development do
   gem 'bullet'

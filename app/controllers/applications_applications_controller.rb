@@ -35,6 +35,7 @@ class ApplicationsApplicationsController < ApplicationController
 
   # GET /applications_applications/1/edit
   def edit
+    @application_event=ApplicationsEvent.find(params[:applications_event_id])
     @applications_application = ApplicationsApplication.find(params[:id])
   end
 
@@ -57,6 +58,7 @@ class ApplicationsApplicationsController < ApplicationController
   # PUT /applications_applications/1
   # PUT /applications_applications/1.json
   def update
+    @application_event=ApplicationsEvent.find(params[:applications_event_id])
     @applications_application = ApplicationsApplication.find(params[:id])
 
     respond_to do |format|

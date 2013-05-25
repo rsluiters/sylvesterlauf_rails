@@ -32,7 +32,7 @@
       %td= applications_application.comment
       %td
         - if current_user
-          = link_to edit_applications_event_applications_application_path(applications_application),class:"btn" do
+          = link_to edit_applications_event_applications_application_path(@applications_event,applications_application),class:"btn" do
             %i.icon-pencil
           = link_to [@applications_event,applications_application], method: :delete, data: { confirm: 'Bist du sicher?' },class:"btn" do
             %i.icon-trash
