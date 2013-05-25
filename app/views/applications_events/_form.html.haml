@@ -8,7 +8,7 @@
         - @applications_event.errors.full_messages.each do |msg|
           %li= msg
   = f.input :name, label: "Name:"
-  = f.input :deadline_internal,as: :date, label: "Anmeldefrist(intern):"order: [:day,:month, :year]
+  = f.input :deadline_internal,as: :date, label: "Anmeldefrist(intern):", order: [:day, :month, :year]
   = f.input :url, as: :url, label: "Event URL:"
   = f.input :announcement_url, as: :url, label: "Ausschreibung URL:"
   = f.input :comment, as: :text, label: "Kommentar:"
