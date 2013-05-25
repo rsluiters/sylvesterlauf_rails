@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.13'
 gem 'bcrypt-ruby', '3.0.1'
 gem 'haml'
-
+gem 'rails-i18n' #locales
 
 # Gems used only for assets and not required
 # in production environments by default.
