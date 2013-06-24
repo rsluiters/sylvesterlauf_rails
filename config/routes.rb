@@ -16,9 +16,10 @@ SylvesterlaufRails::Application.routes.draw do
   resources :events
 
   root :to => 'homepage#index'
-  match '/homepage/strecke',  to: 'homepage#strecke'
-  match '/homepage/googlemaps',  to: 'homepage#googlemaps'
+  get '/homepage/strecke',  to: 'homepage#strecke'
+  get '/homepage/googlemaps',  to: 'homepage#googlemaps'
+  get '/homepage/contact',  to: 'homepage#contact'
 
-  match '/set_language/:locale',  to: 'application#set_language'
+  get '/set_language/:locale',  to: 'application#set_language'
 
 end

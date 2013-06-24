@@ -15,8 +15,12 @@
 - todo_templates:
 - counter
 
+
+
 - email-interface?
 - anmeldung zum newsletter (infos anmeldestart, kurz vor anmeldeende)
+
+
 
 
 - ApplicationsEvent:

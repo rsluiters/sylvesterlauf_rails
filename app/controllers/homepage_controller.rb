@@ -12,4 +12,7 @@ class HomepageController < ApplicationController
     @course = params[:course]
     render :layout => false
   end
+  
+  def contact
+  end
 end
