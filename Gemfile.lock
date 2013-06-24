@@ -58,8 +58,9 @@ GEM
     factory_girl_rails (4.2.1)
       factory_girl (~> 4.2.0)
       railties (>= 3.0.0)
-    font-awesome-rails (3.2.1.1)
-      railties (>= 3.2, < 5.0)
+    font-awesome-sass-rails (3.0.2.2)
+      railties (>= 3.1.1)
+      sass-rails (>= 3.1.1)
     haml (4.0.3)
       tilt
     hike (1.2.3)
@@ -179,7 +180,7 @@ DEPENDENCIES
   bullet
   coffee-rails (~> 3.2.1)
   factory_girl_rails (~> 4.0)
-  font-awesome-rails
+  font-awesome-sass-rails
   haml
   jquery-rails
   jquery-ui-rails

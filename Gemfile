@@ -5,6 +5,8 @@ gem 'bcrypt-ruby', '3.0.1'
 gem 'haml'
 gem 'rails-i18n' #locales
 
+
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -13,8 +15,8 @@ group :assets do
   gem "therubyracer"
   gem "less-rails" 
   gem 'twitter-bootstrap-rails'
-  gem 'font-awesome-rails'
   gem 'jquery-ui-rails'
+  gem 'font-awesome-sass-rails'
 
   gem 'uglifier', '>= 1.0.3'
 end
