@@ -1,0 +1,15 @@
+BEGIN:VCARD
+VERSION:2.1
+N:;Sylvesterlauf
+FN:Sylvesterlauf
+ORG:Sylvesterlauf-Team;Meldungen
+TITLE:Pfalzdorf
+NOTE:Online-Meldung unter: http://www.sylvesterlauf.de
+TEL;WORK;VOICE:+49 (02823) 87 97 86
+TEL;WORK;FAX:+49 (02823) 87 97 89
+ADR;WORK:;;Hevelingstr. 41;Goch;NRW;47574;Deutschland
+LABEL;WORK;ENCODING=QUOTED-PRINTABLE:Hevelingstr. 41=0D=0AGoch, NRW 47574=0D=0ADeutschland
+URL;HOME:http://www.sylvesterlauf.de
+EMAIL;PREF;INTERNET:info@sylvesterlauf.de
+REV:20050929T190000Z
+END:VCARD
