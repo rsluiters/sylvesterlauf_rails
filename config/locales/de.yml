@@ -6,6 +6,7 @@ de:
     before_run:
       before_run: "Vor dem Lauf"
       announcement: "Ausschreibung"
+      application: "Anmeldung"
       corrections: "Korrekturen"
       participants_list: "Teilnehmerliste"
       course_info: "Streckeninformationen"

@@ -1,27 +1,27 @@
-%h1 Neuigkeiten
-- if current_user && current_user.admin?
-  = link_to new_news_path do
-    %button.icon-plus
-      Neue Nachricht
-%dl
-  - @news.each do |news|
-    %dt
-      = news.title
-    %dd
-      = news.content
-      - if current_user && current_user.admin?
-        .pull-right
-          = link_to news do
-            %button.icon-eye-open
-          = link_to edit_news_path(news) do
-            %button.icon-pencil
-          = link_to news, method: :delete, data: { confirm: 'Bist du sicher?' } do
-            %button.icon-trash
-      %br/
-      %small
-        %i
-          (
-          = time_ago_in_words(news.created_at)
-          )
+.row
+  .span8.offset2
+    - if current_user && current_user.admin?
+      = link_to new_news_path do
+        %button.btn.icon-plus
+          Neue Nachricht
+    %dl
+      - @news.each do |news|
+        %dt
+          = news.title
+        %dd
+          = news.content
+          - if current_user && current_user.admin?
+            .pull-right
+              = #link_to news do %button.icon-eye-open
+              = link_to edit_news_path(news) do
+                %button.btn.btn-mini.icon-pencil
+              = link_to news, method: :delete, data: { confirm: 'Bist du sicher?' } do
+                %button.btn.btn-mini.icon-trash
+          %br/
+          %small
+            %i
+              (
+              = time_ago_in_words(news.created_at)
+              )
 
-%br/
+    %br/

@@ -15,7 +15,8 @@
                 %b.caret
               %ul.dropdown-menu
                 %li= link_to I18n.t("nav.before_run.announcement"), "/ausschreibung_2012.pdf"
-                %li= link_to I18n.t("nav.before_run.corrections"), "#"
+                %li= link_to I18n.t("nav.before_run.application"), Event.next_event.application_url
+                %li= link_to I18n.t("nav.before_run.corrections"), Event.next_event.correction_url
                 %li= link_to I18n.t("nav.before_run.participants_list"), Event.next_event.participants_list_url
                 %li= link_to I18n.t("nav.before_run.course_info"), "/homepage/strecke"
                 %li= link_to I18n.t("nav.before_run.route_and_parking"), "/anfahrtparken.html"
@@ -33,7 +34,7 @@
                 Kontakt
                 %b.caret
               %ul.dropdown-menu
-                %li= link_to "Gästebuch", "#"
+                %li= link_to "Gästebuch", "/guestbook_entries"
                 %li= link_to "Kontakt und Impressum", "/homepage/contact"
           %ul.nav.pull-right
             - if signed_in?
@@ -58,4 +59,21 @@
                 %ul.dropdown-menu
                   %li= link_to "Laufmeldungen", applications_events_path
                   %li= link_to "Einloggen", signin_path
+            %li.dropdown
+              %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                %i.icon-globe.icon-2x
+              %ul.dropdown-menu
+                %li
+                  %a{href: "/set_language/de"}
+                    %img{src: "/assets/flags/de.png"}
+                    Deutsch
+                %li    
+                  %a{href: "/set_language/nl"}
+                    %img{src: "/assets/flags/nl.png"}
+                    Nederlands
+                %li    
+                  %a{href: "/set_language/en"}
+                    %img{src: "/assets/flags/gb.png"}
+                    English
+                    
 

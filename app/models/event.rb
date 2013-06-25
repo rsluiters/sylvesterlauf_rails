@@ -7,6 +7,14 @@ class Event < ActiveRecord::Base
     Event.where("date >= ?",Date.today).first
   end
   
+  def application_url
+    "http://my3.raceresult.com/details/index.php?page=2&eventid=#{raceresults_id}&lang=#{I18n.locale}"
+  end
+  def correction_url
+    "http://my3.raceresult.com/details/index.php?page=5&eventid=#{raceresults_id}&lang=#{I18n.locale}"
+  end
+
+
   def participants_list_url
     "http://my3.raceresult.com/details/index.php?page=3&eventid=#{raceresults_id}&lang=#{I18n.locale}"
   end

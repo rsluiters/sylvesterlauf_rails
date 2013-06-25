@@ -1,25 +1,26 @@
-%h1 Listing guestbook_entries
+%h1 Gästebuch
 
-%table
-  %tr
-    %th Content
-    %th Name
-    %th Email
-    %th Status
-    %th
-    %th
-    %th
-
-  - @guestbook_entries.each do |guestbook_entry|
-    %tr
-      %td= guestbook_entry.content
-      %td= guestbook_entry.name
-      %td= guestbook_entry.email
-      %td= guestbook_entry.status
-      %td= link_to 'Show', guestbook_entry
-      %td= link_to 'Edit', edit_guestbook_entry_path(guestbook_entry)
-      %td= link_to 'Destroy', guestbook_entry, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
+= link_to new_guestbook_entry_path do
+  %button.btn.btn-large.btn-primary.icon-plus
+    Eintrag schreiben...
 %br
-
-= link_to 'New Guestbook entry', new_guestbook_entry_path
+%br
+%br
+- @guestbook_entries.each do |entry|
+  %div
+    %blockquote
+      %p
+        =entry.content
+        - if current_user && current_user.admin?
+          = link_to edit_guestbook_entry_path(entry) do
+            %button.btn.btn-mini.icon-pencil
+          = link_to entry, :method => :delete, :data => { :confirm => 'Bist du sicher?' } do
+            %button.btn.btn-mini.icon-trash
+      %small
+        - unless entry.email.blank?
+          %a{href:"mailto:#{entry.email}"}=entry.name
+        -else
+          ="#{entry.name}"
+        = time_ago_in_words(entry.created_at)
+          
+    %br

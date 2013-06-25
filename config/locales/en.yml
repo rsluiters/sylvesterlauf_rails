@@ -6,6 +6,7 @@ en:
     before_run:
       before_run: "Before Run"
       announcement: "Announcement"
+      application: "Application"
       corrections: "Corrections"
       participants_list: "Participants List"
       course_info: "Course Info"

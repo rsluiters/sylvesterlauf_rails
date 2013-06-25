@@ -15,12 +15,17 @@ $grayLighter: #efefef;
   box-sizing: border-box;
 }
 
-body {
+#main_area {
+  background-color: #ffffff;
   background-image:url('logo_background.jpg');
   background-repeat:no-repeat;
   background-attachment:fixed;
   background-position: center center;
-  
+  height: 100%;
+}
+
+body {
+  background-color: #eeeeee;
 }
 
 /* miscellaneous */
