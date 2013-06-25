@@ -1,5 +1,8 @@
 SylvesterlaufRails::Application.routes.draw do
 
+  resources :guestbook_entries
+
+
   resources :applications_events do
     resources :applications_applications
   end  

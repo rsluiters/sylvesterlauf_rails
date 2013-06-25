@@ -1,0 +1,22 @@
+= form_for @guestbook_entry do |f|
+  - if @guestbook_entry.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@guestbook_entry.errors.count, "error")} prohibited this guestbook_entry from being saved:"
+      %ul
+        - @guestbook_entry.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :content
+    = f.text_area :content
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :email
+    = f.text_field :email
+  .field
+    = f.label :status
+    = f.number_field :status
+  .actions
+    = f.submit 'Save'

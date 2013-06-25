@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Content:
+  = @guestbook_entry.content
+%p
+  %b Name:
+  = @guestbook_entry.name
+%p
+  %b Email:
+  = @guestbook_entry.email
+%p
+  %b Status:
+  = @guestbook_entry.status
+
+= link_to 'Edit', edit_guestbook_entry_path(@guestbook_entry)
+\|
+= link_to 'Back', guestbook_entries_path

@@ -1,0 +1,25 @@
+%h1 Listing guestbook_entries
+
+%table
+  %tr
+    %th Content
+    %th Name
+    %th Email
+    %th Status
+    %th
+    %th
+    %th
+
+  - @guestbook_entries.each do |guestbook_entry|
+    %tr
+      %td= guestbook_entry.content
+      %td= guestbook_entry.name
+      %td= guestbook_entry.email
+      %td= guestbook_entry.status
+      %td= link_to 'Show', guestbook_entry
+      %td= link_to 'Edit', edit_guestbook_entry_path(guestbook_entry)
+      %td= link_to 'Destroy', guestbook_entry, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Guestbook entry', new_guestbook_entry_path
