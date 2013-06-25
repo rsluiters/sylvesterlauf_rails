@@ -8,6 +8,10 @@
 - raceresult stuff in iframe
 - urkundendruck (Namen / Startnummer eingeben und dann Anzeige der Urkunde)
 
+- guestbook datetime, title, text, status
+
+-task eventid, name, text, duedate, assigned_user, status 
+
 - News: carrierwave upload to sftp folder
 - fotos und videos/links: Speicherplatz für eigene Bilder 
 
