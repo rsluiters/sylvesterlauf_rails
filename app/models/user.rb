@@ -18,6 +18,10 @@ class User < ActiveRecord::Base
     self.email=="ralph@sluiters.de"
   end
   
+  def self.current_user
+    session.current_user
+  end
+  
 private
 
   def create_remember_token

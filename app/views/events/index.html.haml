@@ -1,0 +1,25 @@
+%h1 Eventliste
+%table.table.table-striped
+  %tr
+    %th Datum
+    %th Name
+    %th Raceresults
+    %th Anmeldestart
+    %th Anmeldeende
+    %th
+  - @events.each do |event|
+    %tr
+      %td= event.date
+      %td= event.name
+      %td= event.raceresults_id
+      %td= event.registration_start
+      %td= event.registration_end
+      %td
+        = link_to edit_event_path(event) do
+          %button.btn.btn-mini.icon-pencil
+        = link_to event, method: :delete, data: { confirm: 'Bist du sicher?' } do
+          %button.btn.btn-mini.icon-trash
+%br/
+= link_to new_event_path do
+  %button.btn.icon-plus
+    Neues Event

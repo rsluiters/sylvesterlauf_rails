@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+  before_filter :is_admin
+
   # GET /events
   # GET /events.json
   def index
@@ -80,4 +82,13 @@ class EventsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+private
+
+  def is_admin
+#    unless (current_user && current_user.admin?)
+#      flash[:error] = "Diese Seite ist nur für Admins zugreifbar"
+#      redirect_to :root
+#    end
+  end#def
 end

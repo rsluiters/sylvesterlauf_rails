@@ -28,7 +28,9 @@ class Event < ActiveRecord::Base
   end
   
   def runner_counter
-    URI.parse("http://my3.raceresult.com/details/counter.php?eventid=#{raceresults_id}").read    
+    URI.parse("http://my3.raceresult.com/details/counter.php?eventid=#{raceresults_id}").read
+  rescue
+    "-"
   end
   
 end
