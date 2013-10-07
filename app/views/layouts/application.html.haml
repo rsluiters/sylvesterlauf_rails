@@ -9,12 +9,14 @@
     = csrf_meta_tags
   %body
     #main_area.container
-      = render 'layouts/header'
-      - flash.each do |key, value|
-        %div{class:"alert alert#{key}"}
-          = value
       .row-fluid
-        .span10.offset1
+        .span2
+          = render 'layouts/menu'
+        .span10
+          = render 'layouts/header'
+          - flash.each do |key, value|
+            %div{class:"alert alert#{key}"}
+              = value
           = yield
       =# debug(params) if Rails.env.development?
-    
+

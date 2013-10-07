@@ -1,0 +1,47 @@
+#menu
+  %img{src:"http://www.sylvesterlauf.de/library/images/syl_logo.jpg",width: 219}
+  %ul.nav.nav-list
+    %li= link_to "Home", root_path
+    %li.nav-header Vor dem Lauf
+    %li= link_to I18n.t("nav.before_run.announcement"), "/ausschreibung_2012.pdf"
+    %li= link_to I18n.t("nav.before_run.application"), Event.next_event.application_url
+    %li= link_to I18n.t("nav.before_run.corrections"), Event.next_event.correction_url
+    %li= link_to I18n.t("nav.before_run.participants_list"), Event.next_event.participants_list_url
+    %li= link_to I18n.t("nav.before_run.course_info"), "/homepage/strecke"
+    %li= link_to I18n.t("nav.before_run.route_and_parking"), "/anfahrtparken.html"
+    %li.nav-header Nach dem Lauf
+    %li= link_to I18n.t("nav.after_run.results"), Event.next_event.result_url
+    %li= link_to I18n.t("nav.after_run.print_certificate"), "#"
+    %li= link_to "Pressespiegel", "#"
+    %li= link_to "Fotos", "#"
+    %li.nav-header Kontakt
+    %li= link_to "Gästebuch", "/guestbook_entries"
+    %li= link_to "Kontakt und Impressum", "/homepage/contact"
+  %br
+  %br
+  %br
+  %br
+  %br
+  %a{href:"http://www.facebook.com/pages/Sylvesterlauf-Pfalzdorf/196661303699230", target:"_blank"}
+    %img{src:"http://www.sylvesterlauf.de/images/facebook_button.png"}
+  %br
+  %br
+  .center{style: "text-align: center;"}
+    Anzahl Meldungen:
+    %br
+    = Event.next_event.runner_counter
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+
+

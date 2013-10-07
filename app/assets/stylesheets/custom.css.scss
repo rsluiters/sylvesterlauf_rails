@@ -2,6 +2,16 @@
 html { height: 100% }
 body { height: 100%; margin: 0; padding: 0 }
 
+header.navbar {margin-bottom: 0px;}
+
+#menu {
+  background-color: #241E7F;
+  color: #fff;
+  a:link {color: #fff;}
+  a:visited {color: #eee;}
+  a:hover {color: #241E7F;}
+}
+
 
 
 /* mixins, variables, etc. */
@@ -17,10 +27,6 @@ $grayLighter: #efefef;
 
 #main_area {
   background-color: #ffffff;
-  background-image:url('logo_background.jpg');
-  background-repeat:no-repeat;
-  background-attachment:fixed;
-  background-position: center center;
   height: 100%;
 }
 
