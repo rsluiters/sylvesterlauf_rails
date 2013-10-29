@@ -2,7 +2,21 @@
 html { height: 100% }
 body { height: 100%; margin: 0; padding: 0 }
 
-header.navbar {margin-bottom: 0px;}
+header.navbar {
+    margin-bottom: 0px;
+}
+
+.navbar-inverse .navbar-inner {
+    background-color: #241e7f; /* fallback color, place your own */
+    border: none;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+
+      background-image:image-url('logo.gif');
+      background-size:500px 50px;
+      background-repeat: no-repeat;
+    }
 
 #menu {
   background-color: #241E7F;

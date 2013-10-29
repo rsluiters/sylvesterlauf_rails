@@ -10,10 +10,18 @@
     %li= link_to I18n.t("nav.before_run.course_info"), "/homepage/strecke"
     %li= link_to I18n.t("nav.before_run.route_and_parking"), "/anfahrtparken.html"
     %li.nav-header Nach dem Lauf
-    %li= link_to I18n.t("nav.after_run.results"), Event.next_event.result_url
-    %li= link_to I18n.t("nav.after_run.print_certificate"), "#"
-    %li= link_to "Pressespiegel", "#"
-    %li= link_to "Fotos", "#"
+    %li
+      %i= I18n.t("nav.after_run.results")
+    %li
+      %i= I18n.t("nav.after_run.print_certificate")
+    %li
+      %i= "Pressespiegel"
+    %li
+      %i= "Fotos"
+    %li=# link_to I18n.t("nav.after_run.results"), Event.next_event.result_url
+    %li=# link_to I18n.t("nav.after_run.print_certificate"), "#"
+    %li=# link_to "Pressespiegel", "#"
+    %li=# link_to "Fotos", "#"
     %li.nav-header Kontakt
     %li= link_to "Gästebuch", "/guestbook_entries"
     %li= link_to "Kontakt und Impressum", "/homepage/contact"
